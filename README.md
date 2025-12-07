@@ -254,10 +254,6 @@ docker-compose ps
 docker-compose logs db
 ```
 
-**SSL certificate errors:**
-- Browser warning is normal for self-signed certificates
-- Click "Advanced" → "Proceed to localhost (unsafe)"
-
 ### Local Setup Issues
 
 **Database connection:**
