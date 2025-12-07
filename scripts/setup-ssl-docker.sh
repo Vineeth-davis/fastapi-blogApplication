@@ -7,7 +7,7 @@ set -e
 
 DOMAIN="fastapiblogapp.duckdns.org"
 EMAIL="lordvineeth@gmail.com"
-EXPECTED_IP="49.207.216.44"
+EXPECTED_IP="13.236.76.18"
 
 echo "🔐 SSL Certificate Setup for Docker Deployment"
 echo "=============================================="
