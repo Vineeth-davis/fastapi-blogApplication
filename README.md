@@ -128,6 +128,91 @@ Once the application is running:
 - **ReDoc**: https://localhost/redoc (Docker) or http://localhost:8000/redoc (Local)
 - **OpenAPI JSON**: https://localhost/openapi.json (Docker) or http://localhost:8000/openapi.json (Local)
 
+## 🚀 Production Deployment
+
+### Quick Start (Recommended)
+
+Use the unified deployment script that handles everything automatically:
+
+```bash
+# Make script executable
+chmod +x scripts/deploy-production.sh
+
+# Run deployment (reads from .env or prompts for values)
+bash scripts/deploy-production.sh
+```
+
+**What the script does:**
+- ✅ Reads configuration from `.env` file (or prompts you)
+- ✅ Verifies DNS is configured correctly
+- ✅ Sets up SSL certificate (Let's Encrypt)
+- ✅ Creates/updates Nginx configuration
+- ✅ Handles database migrations
+- ✅ Deploys application with Docker
+- ✅ Seeds initial users (optional)
+- ✅ Verifies HTTPS, DNS, and everything works
+
+### Step-by-Step Setup
+
+#### Step 1: Create `.env` File (Optional but Recommended)
+
+Create a `.env` file in the project root:
+
+```bash
+# Create .env file
+cat > .env << EOF
+DOMAIN=your-domain.com
+SERVER_IP=your-server-ip
+SSL_EMAIL=your-email@example.com
+EOF
+```
+
+**Required values:**
+- `DOMAIN` - Your domain (e.g., `fastapiblogapp.duckdns.org`)
+- `SERVER_IP` - Your server's public IP address
+- `SSL_EMAIL` - Email for SSL certificate notifications
+
+#### Step 2: Run Deployment Script
+
+```bash
+bash scripts/deploy-production.sh
+```
+
+The script will:
+- Use values from `.env` if available
+- Prompt for any missing values
+- Handle all deployment steps automatically
+
+#### Step 3: Access Your Application
+
+After deployment completes:
+- **HTTPS**: https://your-domain.com/docs
+- **API**: https://your-domain.com/api
+- **Health**: https://your-domain.com/health
+
+### Manual Deployment (Alternative)
+
+If you prefer manual steps:
+
+1. **Get SSL Certificate:**
+   ```bash
+   sudo bash scripts/setup-ssl-docker.sh
+   ```
+   (Requires `.env` file with `DOMAIN`, `SSL_EMAIL`, `SERVER_IP`)
+
+2. **Deploy:**
+   ```bash
+   docker-compose -f docker-compose.production.yml up -d
+   ```
+
+### Complete Documentation
+
+For detailed deployment guides, see:
+- **[README_DEPLOYMENT.md](README_DEPLOYMENT.md)** - Complete deployment guide ⭐ **START HERE**
+- **[DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)** - Deployment summary and FAQ
+- **[SETUP_AWS_EC2.md](SETUP_AWS_EC2.md)** - AWS EC2 setup guide
+
+
 ## 🔐 Authentication
 
 ### Get Access Token

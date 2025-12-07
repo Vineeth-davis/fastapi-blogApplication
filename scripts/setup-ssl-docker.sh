@@ -1,18 +1,42 @@
 #!/bin/bash
 # SSL Certificate Setup Script for Docker Deployment
-# Domain: fastapiblogapp.duckdns.org
-# Email: lordvineeth@gmail.com
 
 set -e
 
-DOMAIN="fastapiblogapp.duckdns.org"
-EMAIL="lordvineeth@gmail.com"
-EXPECTED_IP="13.236.76.18"
+# Load from .env if available
+if [ -f .env ]; then
+    export $(grep -v '^#' .env | xargs)
+fi
+
+# Use .env values (required)
+DOMAIN="${DOMAIN}"
+EMAIL="${SSL_EMAIL}"
+EXPECTED_IP="${SERVER_IP}"
+
+# Validate required values
+if [ -z "$DOMAIN" ]; then
+    echo "❌ DOMAIN is required in .env file or environment"
+    echo "   Add to .env: DOMAIN=your-domain.com"
+    exit 1
+fi
+
+if [ -z "$EMAIL" ]; then
+    echo "❌ SSL_EMAIL is required in .env file or environment"
+    echo "   Add to .env: SSL_EMAIL=your-email@example.com"
+    exit 1
+fi
+
+if [ -z "$EXPECTED_IP" ]; then
+    echo "❌ SERVER_IP is required in .env file or environment"
+    echo "   Add to .env: SERVER_IP=your-server-ip"
+    exit 1
+fi
 
 echo "🔐 SSL Certificate Setup for Docker Deployment"
 echo "=============================================="
 echo "Domain: ${DOMAIN}"
 echo "Email: ${EMAIL}"
+echo "Expected IP: ${EXPECTED_IP}"
 echo ""
 
 # Check if running as root
