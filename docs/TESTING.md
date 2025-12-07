@@ -297,62 +297,6 @@ docker-compose exec api pytest -v
    ```
 4. The comment should be broadcast to all connected clients
 
-## Common Issues and Solutions
-
-### Issue: "Connection refused" or "Cannot connect"
-
-**Solution:**
-- Check if containers are running: `docker-compose ps`
-- Check logs: `docker-compose logs api`
-- Ensure port 8000 is not in use by another application
-
-### Issue: "401 Unauthorized"
-
-**Solution:**
-- Make sure you're including the Bearer token in the Authorization header
-- Check if the token has expired (tokens expire after 15 minutes)
-- Login again to get a new token
-
-### Issue: "Database connection error"
-
-**Solution:**
-- Check database container: `docker-compose ps db`
-- Check database logs: `docker-compose logs db`
-- Verify database credentials in `docker-compose.yml`
-
-### Issue: "Circular import error"
-
-**Solution:**
-- This is a code issue that needs to be fixed
-- Check the logs for the exact import error
-- Fix the circular dependency in the code
-
-## Performance Testing
-
-### Check Response Times
-
-```powershell
-Measure-Command {
-    Invoke-RestMethod -Uri http://localhost:8000/health
-}
-```
-
-### Load Testing (if you have Apache Bench or similar)
-
-```bash
-# Install Apache Bench (ab) or use a similar tool
-ab -n 1000 -c 10 http://localhost:8000/health
-```
-
-## Next Steps
-
-1. ✅ Verify all containers are running
-2. ✅ Test health endpoint
-3. ✅ Test authentication (register/login)
-4. ✅ Test blog creation
-5. ✅ Test admin features (if you have admin access)
-6. ✅ Test real-time features (SSE/WebSocket)
-7. ✅ Run automated test suite
 
 ## Additional Resources
 

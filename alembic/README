@@ -1,4 +1,0 @@
-Generic single-database configuration with an async engine.
-
-This is a minimal Alembic setup for use with async SQLAlchemy.
-
