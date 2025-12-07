@@ -2,6 +2,16 @@
 
 A production-ready FastAPI backend for a modern blog platform with authentication, real-time features (SSE/WebSockets), approval workflows, and comprehensive security measures.
 
+## 🌐 Live Application
+
+**The application is currently live and serving at:**
+- **Production URL**: https://fastapiblogapp.duckdns.org/
+- **API Documentation**: https://fastapiblogapp.duckdns.org/docs
+- **Health Check**: https://fastapiblogapp.duckdns.org/health
+- **API Base**: https://fastapiblogapp.duckdns.org/api
+
+Try it out! The API is fully functional with HTTPS, SSL certificates, and all features enabled.
+
 ## 🚀 Quick Start
 
 ### Option 1: Docker (Recommended - No Python Required)
@@ -130,6 +140,8 @@ Once the application is running:
 
 ## 🚀 Production Deployment
 
+**✅ Live Example:** This application is currently deployed and running at [https://fastapiblogapp.duckdns.org/](https://fastapiblogapp.duckdns.org/)
+
 ### Quick Start (Recommended)
 
 Use the unified deployment script that handles everything automatically:
@@ -189,6 +201,8 @@ After deployment completes:
 - **HTTPS**: https://your-domain.com/docs
 - **API**: https://your-domain.com/api
 - **Health**: https://your-domain.com/health
+
+**Live Example:** See the deployed version at [https://fastapiblogapp.duckdns.org/](https://fastapiblogapp.duckdns.org/)
 
 ### Manual Deployment (Alternative)
 
