@@ -8,7 +8,6 @@ from typing import List
 from fastapi import Depends, HTTPException, status
 from app.models.user import User, UserRole
 
-# Direct import - no circular dependency since dependencies.py doesn't import rbac
 from app.auth.dependencies import get_current_active_user
 
 

@@ -12,10 +12,6 @@ from app.models.user import User
 from app.auth.utils import verify_token
 from app.auth.schemas import TokenData
 
-# Note: RBAC dependencies are imported where needed to avoid circular imports
-
-# HTTP Bearer token scheme
-# Use auto_error=False to return 401 instead of 403 when no credentials provided
 security = HTTPBearer(auto_error=False)
 
 

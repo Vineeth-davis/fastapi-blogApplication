@@ -1,5 +1,5 @@
 """
-Blog model for blog posts/articles.
+Blog model for blogs.
 """
 
 from datetime import datetime
@@ -18,7 +18,7 @@ class BlogStatus(PyEnum):
 
 
 class Blog(Base):
-    """Blog model representing blog posts/articles."""
+    """Blog model representing blogs."""
 
     __tablename__ = "blogs"
 

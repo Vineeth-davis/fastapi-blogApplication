@@ -1,7 +1,6 @@
 """
 Logging configuration for the application.
 
-Supports both JSON and text logging formats based on environment configuration.
 """
 
 import logging

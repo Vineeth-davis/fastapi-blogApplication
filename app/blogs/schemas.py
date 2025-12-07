@@ -1,5 +1,5 @@
 """
-Pydantic schemas for blog operations.
+Schemas for blog operations.
 """
 
 from datetime import datetime

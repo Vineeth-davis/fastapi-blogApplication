@@ -3,9 +3,6 @@ In-memory notifications manager for Server-Sent Events (SSE).
 
 Admins can subscribe to an SSE stream to receive real-time notifications
 when new blogs are submitted with status `pending`.
-
-This implementation is intentionally simple and in-memory only,
-which is sufficient for the assignment.
 """
 
 import asyncio

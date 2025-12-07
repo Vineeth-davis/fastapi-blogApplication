@@ -1,5 +1,5 @@
 """
-Pydantic schemas for authentication requests and responses.
+Schemas for authentication requests and responses.
 """
 
 from datetime import datetime

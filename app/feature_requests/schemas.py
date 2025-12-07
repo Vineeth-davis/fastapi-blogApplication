@@ -1,5 +1,5 @@
 """
-Pydantic schemas for feature request operations.
+Schemas for feature request operations.
 """
 
 from datetime import datetime

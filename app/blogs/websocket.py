@@ -1,7 +1,7 @@
 """
 WebSocket endpoint for real-time blog comments.
 
-Endpoint (per assignment):
+Endpoint:
 - WS /api/blogs/{id}/ws : Real-time chat/comments under each blog post,
   broadcast to all connected clients (no polling).
 """
@@ -131,7 +131,7 @@ async def blog_comments_websocket(
                 }
                 await chat_manager.broadcast(blog_id, json.dumps(outgoing))
             else:
-                # for future chats - ignore for now
+                # can be used for any other messages in the future
                 continue
     except WebSocketDisconnect:
         chat_manager.disconnect(blog_id, websocket)

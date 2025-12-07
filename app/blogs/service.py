@@ -1,5 +1,5 @@
 """
-Service functions for blog CRUD operations and business rules.
+functions for blog CRUD operations
 """
 
 from datetime import datetime
@@ -64,7 +64,7 @@ async def create_blog(db: AsyncSession, current_user: User, data: BlogCreate) ->
     db.add(blog)
     await db.flush()
     await db.refresh(blog)
-    await db.commit()  # Ensure blog is committed before notifying
+    await db.commit() 
     # Notify admins about new pending blog
     await notifications_manager.notify_new_pending_blog(blog)
     return blog
