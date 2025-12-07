@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Git
+.git/
+.gitignore
+
+# Documentation (keep essential docs, ignore others)
+*.md
+!README.md
+!DOCKER_QUICKSTART.md
+!QUICKSTART.md
+!TESTING.md
+
+# Uploads (keep directory structure)
+uploads/*
+!uploads/.gitkeep
+
+# Test/Development files
+dummy*
+*.ipynb
+test_sse_quick.md
+test_websocket_postman.json
+
+# Other
+.DS_Store
+Thumbs.db

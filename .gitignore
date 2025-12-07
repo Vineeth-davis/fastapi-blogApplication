@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Alembic
+alembic/versions/*.pyc
+
+# OS
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# SSL certificates (included for easy setup - self-signed for localhost)
+# ssl/*.crt
+# ssl/*.key
+
+# Test/Development files
+dummy*
+*.ipynb
+test_sse_quick.md
+test_websocket_postman.json
+
+# Assignment PDF (optional - uncomment if you want to keep it private)
+# Backend Case Study - Blog, Fastapi,Python.pdf
