@@ -4,9 +4,8 @@ A production-ready FastAPI backend for a modern blog platform with authenticatio
 
 ## 🚀 Quick Start
 
-### Option 1: Docker (Recommended - No Python Required!)
+### Option 1: Docker (Recommended - No Python Required)
 
-**Perfect if you don't want to worry about Python version or system dependencies!**
 
 1. **Clone the repository:**
    ```bash
@@ -30,7 +29,6 @@ A production-ready FastAPI backend for a modern blog platform with authenticatio
 - ✅ FastAPI application
 - ✅ All migrations applied automatically
 
-**Note:** You'll see a browser security warning for HTTPS (this is normal for self-signed certificates). Click "Advanced" → "Proceed to localhost (unsafe)".
 
 ### Option 2: Local Python Setup
 
@@ -121,10 +119,6 @@ The database includes pre-seeded users for testing:
 | user4 | user4@example.com | user4@1 | user |
 | user5 | user5@example.com | user5@1 | user |
 
-**Note:** To re-seed users, run:
-```bash
-docker-compose exec api python /app/scripts/seed_users.py
-```
 
 ## 📚 API Documentation
 
@@ -184,19 +178,9 @@ docker-compose exec api pytest tests/test_auth.py -v
 pytest tests/test_auth.py -v
 ```
 
-## 📖 Documentation
-
-- **[Docker Quick Start](DOCKER_QUICKSTART.md)** - Detailed Docker setup guide
-- **[API Documentation](docs/API.md)** - Complete API reference
-- **[Deployment Guide](docs/DEPLOYMENT.md)** - Production deployment instructions
-- **[SSL Setup](docs/SSL_SETUP.md)** - HTTPS/SSL configuration
-- **[Testing Guide](TESTING.md)** - Testing instructions
-- **[SSE Testing](docs/SSE_TESTING.md)** - Server-Sent Events testing
-- **[WebSocket Testing](docs/WEBSOCKET_TESTING.md)** - WebSocket testing
-
 ## 🔧 Environment Variables
 
-Key environment variables (see `.env.example` for full list):
+Key environment variables:
 
 - `DATABASE_URL` - Database connection string
 - `SECRET_KEY` - JWT secret key (generate a random string)
@@ -232,36 +216,4 @@ Key environment variables (see `.env.example` for full list):
 ├── Dockerfile               # Docker image definition
 └── requirements.txt         # Python dependencies
 ```
-
-## 🚨 Troubleshooting
-
-### Docker Issues
-
-**Port already in use:**
-```bash
-# Stop existing containers
-docker-compose down
-
-# Or change ports in docker-compose.yml
-```
-
-**Database connection errors:**
-```bash
-# Check if database is running
-docker-compose ps
-
-# View database logs
-docker-compose logs db
-```
-
-### Local Setup Issues
-
-**Database connection:**
-- Ensure PostgreSQL is running
-- Check `DATABASE_URL` in `.env`
-- Run migrations: `alembic upgrade head`
-
-**Import errors:**
-- Activate virtual environment
-- Install dependencies: `pip install -r requirements.txt`
 
